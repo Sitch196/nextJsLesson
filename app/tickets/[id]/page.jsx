@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-
+import NotFound from "../../not-found";
+import Loading from "@/app/loading";
 export default function TicketDetails({ params }) {
   const [pageFound, setPageFound] = useState(true);
   const [ticket, setTicket] = useState(null);
@@ -43,11 +44,11 @@ export default function TicketDetails({ params }) {
               </div>
             </div>
           ) : (
-            <p>Loading...</p>
+            <Loading />
           )}
         </main>
       ) : (
-        <p>Page Not Found</p>
+        <NotFound />
       )}
     </>
   );
